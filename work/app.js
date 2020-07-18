@@ -1,4 +1,6 @@
 var http = request('http');
+var express = require("express");
+var router = express.Router();
 var fs = require('fs');
 
 http.createServer(function(request,response){
@@ -27,7 +29,7 @@ function getStaticFileContent(response,filepath,contentType) {
 	});
 }
 
-let themeButton = document.querySelector('.btn btn-primary');
-themeButton.onclick = function () {
-  
-};
+router.get("/", function(req, res) {
+   // console.log("hello I'm on the start page");
+res.render("public/submit");
+});

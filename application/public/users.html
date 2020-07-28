@@ -10,14 +10,9 @@
 <script>
     function getUsers(){
 $.getJSON( "/users", function( response) {
- let html = "<table>";
-    for(let i = 0;i < response.length;i++){
-        html += "<tr>";
-        html += "<tr>" + response[i]["profile"] + "</td>";
-        html += "</tr>";
-    }
-    html += "</table>";
-    $("#user_table").append(html);
+ let html = "";
+        html =  response.profile;
+    $("#info").append(html);
 
 });
     }
@@ -26,7 +21,7 @@ $.getJSON( "/users", function( response) {
 <body onload = "getUsers()">
 
     <button onclick="getUsers()">Receive Info </button>
-    <div id = "users_table">
+    <div id = "info">
     </div>  
 </body>
 </html>
